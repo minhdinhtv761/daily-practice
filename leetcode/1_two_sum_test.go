@@ -43,8 +43,7 @@ func Test_twoSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := twoSum(tt.args.nums, tt.args.target)
-			assert.ElementsMatch(t, tt.want, got)
+			assert.ElementsMatchf(t, tt.want, twoSum(tt.args.nums, tt.args.target), "twoSum(%v, %v)", tt.args.nums, tt.args.target)
 		})
 	}
 }

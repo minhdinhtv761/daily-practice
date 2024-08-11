@@ -1,6 +1,7 @@
 package leetcode
 
 // twoSum uses hashmap with one pass to solve the problem
+// problem: https://leetcode.com/problems/two-sum/description/
 func twoSum(nums []int, target int) []int {
 	args := make(map[int]int)
 	res := make([]int, 2)
