@@ -1,16 +1,34 @@
 package leetcode
 
+// lemonadeChange uses greedy to check all the bills
+// problem: https://leetcode.com/problems/lemonade-change/description/
 func lemonadeChange(bills []int) bool {
-	billCount := make(map[int]int)
+	counts := make(map[int]int)
 	for _, v := range bills {
-		billCount[v]++
+		counts[v]++
+		switch v {
+		case 10:
+			if counts[5] != 0 {
+				counts[5]--
+				continue
+			}
+			return false
+
+		case 20:
+			if counts[5] != 0 && counts[10] != 0 {
+				counts[10]--
+				counts[5]--
+				continue
+			}
+			if counts[5] > 2 {
+				counts[5] -= 3
+				continue
+			}
+			return false
+
+		default:
+			// do nothing
+		}
 	}
-	if billCount[10] > billCount[5] {
-		return false
-	}
-	billCount[5] -= billCount[10]
-	if billCount[20] > billCount[5] {
-		return false
-	}
-	return billCount[5] >= billCount[20]+(billCount[20]-billCount[10])*2
+	return true
 }
