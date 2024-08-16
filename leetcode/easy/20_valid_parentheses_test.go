@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 import (
 	"testing"
@@ -6,33 +6,40 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_longestCommonPrefix(t *testing.T) {
+func Test_isValid(t *testing.T) {
 	type args struct {
-		strs []string
+		s string
 	}
 	tests := []struct {
 		name string
 		args args
-		want string
+		want bool
 	}{
 		{
 			name: "test case 1",
 			args: args{
-				strs: []string{"flower", "flow", "flight"},
+				s: "()",
 			},
-			want: "fl",
+			want: true,
 		},
 		{
 			name: "test case 2",
 			args: args{
-				strs: []string{"dog", "racecar", "car"},
+				s: "()[]{}",
 			},
-			want: "",
+			want: true,
+		},
+		{
+			name: "test case 3",
+			args: args{
+				s: "(]",
+			},
+			want: false,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			assert.Equalf(t, tt.want, longestCommonPrefix(tt.args.strs), "longestCommonPrefix(%v)", tt.args.strs)
+			assert.Equalf(t, tt.want, isValid(tt.args.s), "isValid(%v)", tt.args.s)
 		})
 	}
 }

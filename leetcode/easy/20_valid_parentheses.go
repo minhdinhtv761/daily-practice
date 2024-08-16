@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 // isValid use stack to check if the current close bracket closes its corresponding bracket
 // problem: https://leetcode.com/problems/valid-parentheses/description/

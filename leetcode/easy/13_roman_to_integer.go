@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 // romanToInt uses hashmap to calculate the convert roman to int
 // problem: https://leetcode.com/problems/roman-to-integer/description/

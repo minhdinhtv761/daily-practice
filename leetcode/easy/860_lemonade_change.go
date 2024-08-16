@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 // lemonadeChange uses greedy to check all the bills
 // problem: https://leetcode.com/problems/lemonade-change/description/

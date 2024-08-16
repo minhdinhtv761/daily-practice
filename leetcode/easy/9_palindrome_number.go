@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 // isPalindrome reverses the entire number x, then check if new number is equal to the original number
 // problem: https://leetcode.com/problems/palindrome-number/description/

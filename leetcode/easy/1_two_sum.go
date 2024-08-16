@@ -1,4 +1,4 @@
-package leetcode
+package easy
 
 // twoSum uses hashmap with one pass to solve the problem
 // problem: https://leetcode.com/problems/two-sum/description/
