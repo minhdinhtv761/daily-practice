@@ -2,6 +2,7 @@ package easy
 
 import (
 	"daily-practice/leetcode/global"
+	"daily-practice/models"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,8 +10,8 @@ import (
 
 func Test_mergeTwoLists(t *testing.T) {
 	type args struct {
-		list1 *ListNode
-		list2 *ListNode
+		list1 *models.ListNode
+		list2 *models.ListNode
 	}
 	tests := []struct {
 		name string
@@ -21,8 +22,8 @@ func Test_mergeTwoLists(t *testing.T) {
 		{
 			name: "recursive - test case 1",
 			args: args{
-				list1: NewListNode([]int{1, 2, 4}),
-				list2: NewListNode([]int{1, 3, 4}),
+				list1: models.NewListNode([]int{1, 2, 4}),
+				list2: models.NewListNode([]int{1, 3, 4}),
 			},
 			mode: global.SolutionModeRecursive,
 			want: []int{1, 1, 2, 3, 4, 4},
@@ -30,8 +31,8 @@ func Test_mergeTwoLists(t *testing.T) {
 		{
 			name: "recursive - test case 2",
 			args: args{
-				list1: NewListNode([]int{}),
-				list2: NewListNode([]int{}),
+				list1: models.NewListNode([]int{}),
+				list2: models.NewListNode([]int{}),
 			},
 			mode: global.SolutionModeRecursive,
 			want: []int{},
@@ -39,8 +40,8 @@ func Test_mergeTwoLists(t *testing.T) {
 		{
 			name: "recursive - test case 3",
 			args: args{
-				list1: NewListNode([]int{}),
-				list2: NewListNode([]int{0}),
+				list1: models.NewListNode([]int{}),
+				list2: models.NewListNode([]int{0}),
 			},
 			mode: global.SolutionModeRecursive,
 			want: []int{0},
